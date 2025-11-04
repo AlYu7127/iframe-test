@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>全屏 IFRAME 頁面</title>
+    
+    <style>
+        /* 1. 重設瀏覽器預設的邊距和填充，確保 HTML 和 BODY 從視窗邊緣開始 */
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden; /* 隱藏主頁面的滾動條 */
+        }
+
+        /* 2. 定義 IFRAME 樣式以實現全屏覆蓋 */
+        .fullscreen-iframe {
+            width: 100vw;      /* 100% 視口寬度 */
+            height: 100vh;     /* 100% 視口高度 */
+            position: fixed;   /* 關鍵：固定在視口上，不隨滾動條移動 */
+            top: 0;            /* 頂部對齊 */
+            left: 0;           /* 左側對齊 */
+            border: none;      /* 移除 IFRAME 預設邊框 */
+            z-index: 9999;     /* 確保 IFRAME 在所有內容之上 */
+        }
+    </style>
+</head>
+<body>
+
+    <iframe 
+        src="https://badsi.te/"  
+        class="fullscreen-iframe"
+        title="嵌入內容">                 
+    </iframe>
+    
+    </body>
+</html>
